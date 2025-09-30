@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Industrial Mining Dashboard Design System */
+
+@layer base {
+  :root {
+    /* Industrial Base Colors */
+    --background: 210 20% 98%;
+    --foreground: 210 30% 8%;
+
+    /* Cards & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 210 30% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 30% 8%;
+
+    /* Industrial Primary - Steel Blue */
+    --primary: 210 40% 15%;
+    --primary-foreground: 210 20% 98%;
+    --primary-hover: 210 45% 12%;
+
+    /* Secondary - Mining Orange */
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 210 30% 8%;
+    --secondary-hover: 25 95% 48%;
+
+    /* Muted Industrial Gray */
+    --muted: 210 15% 92%;
+    --muted-foreground: 210 15% 45%;
+
+    /* Accent - Safety Blue */
+    --accent: 210 60% 45%;
+    --accent-foreground: 210 20% 98%;
+
+    /* Risk Status Colors */
+    --risk-low: 120 60% 45%;
+    --risk-low-foreground: 0 0% 100%;
+    --risk-moderate: 45 95% 55%;
+    --risk-moderate-foreground: 210 30% 8%;
+    --risk-high: 25 95% 53%;
+    --risk-high-foreground: 0 0% 100%;
+    --risk-critical: 0 85% 55%;
+    --risk-critical-foreground: 0 0% 100%;
+
+    /* Alert & Warning */
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 45 95% 55%;
+    --warning-foreground: 210 30% 8%;
+
+    /* Borders & Inputs */
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 210 40% 15%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Industrial Theme */
+    --background: 210 30% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 210 25% 10%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 210 25% 10%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 210 60% 45%;
+    --primary-foreground: 210 20% 98%;
+    --primary-hover: 210 65% 50%;
+
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 210 30% 8%;
+    --secondary-hover: 25 95% 58%;
+
+    --muted: 210 20% 15%;
+    --muted-foreground: 210 15% 65%;
+
+    --accent: 210 60% 45%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 210 20% 18%;
+    --input: 210 20% 18%;
+    --ring: 210 60% 45%;
+    
+    /* Dark mode risk colors remain the same */
+    --risk-low: 120 60% 45%;
+    --risk-low-foreground: 0 0% 100%;
+    --risk-moderate: 45 95% 55%;
+    --risk-moderate-foreground: 210 30% 8%;
+    --risk-high: 25 95% 53%;
+    --risk-high-foreground: 0 0% 100%;
+    --risk-critical: 0 85% 55%;
+    --risk-critical-foreground: 0 0% 100%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Risk Status Variants */
+  .risk-low {
+    @apply bg-risk-low text-risk-low-foreground;
+  }
+  
+  .risk-moderate {
+    @apply bg-risk-moderate text-risk-moderate-foreground;
+  }
+  
+  .risk-high {
+    @apply bg-risk-high text-risk-high-foreground;
+  }
+  
+  .risk-critical {
+    @apply bg-risk-critical text-risk-critical-foreground;
+  }
+
+  /* Industrial Card Styling */
+  .industrial-card {
+    @apply bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-200;
+  }
+
+  /* Status Indicator */
+  .status-indicator {
+    @apply inline-flex items-center justify-center w-3 h-3 rounded-full animate-pulse;
+  }
+
+  /* Data Grid */
+  .data-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4;
+  }
+
+  /* Metric Card */
+  .metric-card {
+    @apply industrial-card p-4 hover:scale-[1.02] transition-transform duration-200;
+  }
+}
